@@ -176,7 +176,7 @@ plt.show()
 ```
 >The dataset shows a clear seasonal pattern, with January and May having the highest number of track releases, while months like July and August see comparatively fewer. This could be due to industry practices, with January marking a fresh start for artists, and May aligning with the summer season when music festivals and events are more prevalent, prompting releases in time for these occasions. This trend suggests that artists and labels may strategically time their releases to maximize exposure and align with listener habits, while the lower release numbers in summer could reflect a focus on promoting existing tracks during festival season rather than introducing new music.
 
-### Genre and Music Characteristics <br>
+### 5. ) Genre and Music Characteristics <br>
 
 **A. Correlation between streams and musical attributes like bpm, danceability_%, and energy_%**
 
@@ -219,7 +219,7 @@ plt.show()
 The correlation coefficient is -0.081, which is very close to zero and indicates almost no correlation. This means there is no significant relationship between the positivity of a song (valence) and its acoustic quality (acousticness). Tracks that are more acoustic do not necessarily have a positive or happy mood, and vice versa. <br>
 > In summary, there is a weak correlation between danceability and energy, while there is virtually no correlation between valence and acousticness.
 
-### Platform Popularity <br>
+### 6. ) Platform Popularity <br>
 
 **A. Comparison of numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists**
 
@@ -248,7 +248,7 @@ plt.show()
 ```
 > The results show that tracks in the dataset are predominantly featured in **Spotify Playlists**, with a total of 4,955,719 appearances, followed by a much smaller number of appearances in **Apple Playlists** (64,625). Tracks appear far less frequently in **Spotify Charts** (11,445), indicating that being included in charts may be a rarer event compared to being featured in playlists. This suggests that while playlists drive much of the track visibility, chart placement is less frequent but could signify a higher level of popularity or recognition within the platform.
 
-### Advanced Analysis
+### 7. ) Advanced Analysis
 
 **A. Patterns among tracks with the same key or mode (Major vs. Minor) based on streams**
 
