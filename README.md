@@ -42,11 +42,12 @@ missing_values
 
 **Given the detected missing values and errors in the dataset, data cleaning is necessary to ensure accurate analysis.**
 ```python
+df['in_deezer_playlists'] = pd.to_numeric(df['in_deezer_playlists'], errors = 'coerce')
 df['streams'] = pd.to_numeric(df['streams'], errors = 'coerce')
 df
 ```
 > This code snippet cleans the DataFrame df by converting certain columns to numeric format, resolving non-numeric errors by setting them to NaN (missing values). Specifically: <br>
-> * The streams, in_deezer_playlists, and in_shazam_charts columns are each converted to numeric format using pd.to_numeric(). <br>
+> * The streams and in_deezer_playlists columns are each converted to numeric format using pd.to_numeric(). <br>
 > * The errors='coerce' argument forces any non-numeric values to become NaN, helping handle data errors. <br>
 >
 > This ensures that the columns are consistently numeric, making them ready for analysis.
@@ -113,10 +114,10 @@ top_spotify_streams
 
 ![image](https://github.com/user-attachments/assets/e3d09914-08e8-4728-9ef5-38824565e767)
  ```python
-# Group by 'artist' and count the number of tracks for each artist
+# Group the data by 'artist' and count the number of tracks for each artist
 top_artists = df['artist(s)_name'].value_counts().head()
 
-# Convert the Series to a DataFrame and reset the index for tabular display
+# Convert to a DataFrame and reset the index for tabular display
 top_artists_df = top_artists.reset_index()
 top_artists_df.columns = ['Artist', 'Track Count']
 
@@ -265,7 +266,7 @@ plt.title("Average Streams by Key and Mode (Major vs Minor)")
 plt.xlabel("Key")
 plt.ylabel("Average Streams")
 
-# Customizing the legend
+# Adding a legend
 plt.legend(title="Mode (0 = Minor, 1 = Major)", loc='upper right')
 
 # Rotating the x-axis labels for better readability
@@ -280,7 +281,7 @@ plt.show()
 
 ![image](https://github.com/user-attachments/assets/127cb2ed-b158-4b5c-8914-e22ae69cc06c)
 ```python
-# Add more platforms to the playlist_counts by summing across the additional columns
+# Comparing the value of different playlists and charts into a group
 playlist_counts = df.groupby('artist(s)_name')[[
     'in_spotify_playlists', 'in_spotify_charts', 'in_apple_playlists', 
     'in_apple_charts', 'in_deezer_playlists', 'in_deezer_charts'
